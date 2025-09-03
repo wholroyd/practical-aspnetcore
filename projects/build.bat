@@ -1,19 +1,7 @@
 REM dotnet build 5-0\hello-world
+REM Removed obsolete/invalid entries: anonymous-id, basic\*, bedrock\echo, and non-existent blazor folder (was causing recursive calls).
 
-dotnet build anonymous-id
 dotnet build application-environment
-dotnet build basic\hello-world
-dotnet build basic\hello-world-2
-dotnet build basic\hello-world-3
-dotnet build basic\i-host-environment
-dotnet build basic\i-webhost-environment
-dotnet build basic\iconfiguration
-dotnet build bedrock\echo\client
-dotnet build bedrock\echo\server
-
-cd blazor\
-call build.bat
-cd ..
 
 cd blazor-ss\
 call build.bat
@@ -136,7 +124,7 @@ dotnet build health-check\health-check-3
 dotnet build health-check\health-check-4
 dotnet build health-check\health-check-5
 dotnet build health-check\health-check-6
-dotnet build http-status-codes
+dotnet build utils\http-status-codes
 dotnet build httpclientfactory\httpclientfactory-1
 dotnet build httpclientfactory\httpclientfactory-2
 dotnet build httpclientfactory\httpclientfactory-3
@@ -168,8 +156,8 @@ dotnet build mailkit\mailkit-1
 dotnet build mailkit\mailkit-2
 dotnet build markdown-server
 dotnet build markdown-server-middleware
-dotnet build media-type-names
-dotnet build media-type-names-2
+dotnet build utils\media-type-names
+dotnet build utils\media-type-names-2
 dotnet build middleware\middleware-0
 dotnet build middleware\middleware-1
 dotnet build middleware\middleware-10
@@ -237,7 +225,7 @@ dotnet build mvc\view-component\view-component-1
 dotnet build mvc\view-component\view-component-2
 dotnet build mvc\view-component\view-component-3
 dotnet build mvc\view-component\view-component-4
-dotnet build newtonsoft-json
+REM Root-level newtonsoft-json project removed; using mvc\newtonsoft-json below.
 dotnet build orchard-core\multi-tenant\Host
 dotnet build orchard-core\routing\ForumModule
 dotnet build orchard-core\routing\Host
@@ -269,7 +257,6 @@ dotnet build request\request-headers-names
 dotnet build request\request-headers-typed
 dotnet build request\request-verb
 dotnet build response\compression-response
-dotnet build response\response-buffering
 dotnet build response\response-header
 dotnet build response\trailing-headers
 dotnet build rewrite\rewrite-1
@@ -282,21 +269,10 @@ dotnet build security\authentication-with-identity\src
 dotnet build signalr\signalr-1\Client
 dotnet build signalr\signalr-1\Server
 dotnet build sse
-dotnet build startup\env-development
-dotnet build startup\no-startup
-dotnet build startup\startup-basic
-dotnet build startup\startup-basic-multiple
-dotnet build startup\startup-basic-multiple-environment
-dotnet build startup\startup-basic-multiple-urls
-dotnet build startup\startup-capture-errors
-dotnet build startup\startup-custom-name
-dotnet build startup\startup-istartupfilter
-dotnet build startup\startup-multiple-configure-environment
-dotnet build startup\startup-multiple-configure-environment-services
-dotnet build startup\suppress-status-messages
+REM Removed deprecated startup\* samples (folder no longer present).
 dotnet build syndications\syndication-1
 dotnet build syndications\syndication-2
-dotnet build syndications\syndication-3
+REM syndications\syndication-3 removed (no project).
 dotnet build uri-helper\uri-helper-build-absolute
 dotnet build uri-helper\uri-helper-from-absolute
 dotnet build uri-helper\uri-helper-get-display-url
@@ -314,13 +290,7 @@ dotnet build web-utilities\web-utilities-reason-phrases
 
 dotnet build sfa\wiki
 
-dotnet build orleans\hello-world\client\
-dotnet build orleans\hello-world\silo\
-dotnet build orleans\hello-world-2\client
-dotnet build orleans\hello-world-2\silo
-dotnet build orleans\hello-world-3
-dotnet build orleans\hello-world-4
-dotnet build orleans\http-client
+REM Removed old orleans hello-world* and http-client samples (not present).
 dotnet build orleans\reminder
 dotnet build orleans\rss-reader
 dotnet build orleans\rss-reader-2
