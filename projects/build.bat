@@ -1,11 +1,32 @@
 REM dotnet build 5-0\hello-world
 REM Removed obsolete/invalid entries: anonymous-id, basic\*, bedrock\echo, and non-existent blazor folder (was causing recursive calls).
+REM -------------------------------------------------------------------------------
+REM Dynamic section: invoke build.bat in every immediate subfolder (if present)
+REM This reduces manual maintenance; failures are tracked via BUILD_ERRORS flag.
+REM -------------------------------------------------------------------------------
+SETLOCAL ENABLEDELAYEDEXPANSION
+SET BUILD_ERRORS=0
+FOR /D %%D IN (*) DO (
+	IF EXIST "%%D\build.bat" (
+		ECHO ========= Building folder: %%D =========
+		PUSHD "%%D"
+		CALL build.bat
+		IF ERRORLEVEL 1 (
+			ECHO -------- FAILED: %%D --------
+			SET BUILD_ERRORS=1
+		)
+		POPD
+	)
+)
+IF %BUILD_ERRORS%==1 (
+	ECHO One or more subfolder build scripts failed.
+) ELSE (
+	ECHO All subfolder build scripts completed successfully.
+)
+ENDLOCAL
+REM -------------------------------------------------------------------------------
 
 dotnet build application-environment
-
-cd blazor-ss\
-call build.bat
-cd ..
 
 dotnet build caching\caching-1
 dotnet build caching\caching-2
@@ -33,7 +54,6 @@ dotnet build endpoint-routing\endpoint-routing
 dotnet build endpoint-routing\endpoint-routing-2
 dotnet build endpoint-routing\endpoint-routing-3
 dotnet build endpoint-routing\endpoint-routing-4
-REM dotnet build endpoint-routing\endpoint-routing-5
 dotnet build endpoint-routing\endpoint-routing-6
 dotnet build endpoint-routing\new-routing
 dotnet build endpoint-routing\new-routing-10
@@ -193,15 +213,6 @@ dotnet build mvc\mvc-output-xml
 dotnet build mvc\nswag
 dotnet build mvc\nswag-2
 dotnet build mvc\output-formatter-syndication
-REM dotnet build mvc\razor-class-library\razor-class-library-1\src\RazorClassLibrary1
-REM dotnet build mvc\razor-class-library\razor-class-library-1\src\RazorClassLibrary2
-REM dotnet build mvc\razor-class-library\razor-class-library-1\src\WebApplication
-REM dotnet build mvc\razor-class-library\razor-class-library-with-controllers\src\RazorClassLibrary1
-REM dotnet build mvc\razor-class-library\razor-class-library-with-controllers\src\WebApplication
-REM dotnet build mvc\razor-class-library\razor-class-library-with-static-files\src\RazorClassLibrary1
-REM dotnet build mvc\razor-class-library\razor-class-library-with-static-files\src\RazorClassLibrary2
-REM dotnet build mvc\razor-class-library\razor-class-library-with-static-files\src\RazorClassLibraries.Mvc.Core
-REM dotnet build mvc\razor-class-library\razor-class-library-with-static-files\src\WebApplication
 dotnet build mvc\result-filestream
 dotnet build mvc\result-physicalfile
 dotnet build mvc\routing\routing-1
@@ -225,7 +236,6 @@ dotnet build mvc\view-component\view-component-1
 dotnet build mvc\view-component\view-component-2
 dotnet build mvc\view-component\view-component-3
 dotnet build mvc\view-component\view-component-4
-REM Root-level newtonsoft-json project removed; using mvc\newtonsoft-json below.
 dotnet build orchard-core\multi-tenant\Host
 dotnet build orchard-core\routing\ForumModule
 dotnet build orchard-core\routing\Host
@@ -269,10 +279,8 @@ dotnet build security\authentication-with-identity\src
 dotnet build signalr\signalr-1\Client
 dotnet build signalr\signalr-1\Server
 dotnet build sse
-REM Removed deprecated startup\* samples (folder no longer present).
 dotnet build syndications\syndication-1
 dotnet build syndications\syndication-2
-REM syndications\syndication-3 removed (no project).
 dotnet build uri-helper\uri-helper-build-absolute
 dotnet build uri-helper\uri-helper-from-absolute
 dotnet build uri-helper\uri-helper-get-display-url
@@ -290,7 +298,6 @@ dotnet build web-utilities\web-utilities-reason-phrases
 
 dotnet build sfa\wiki
 
-REM Removed old orleans hello-world* and http-client samples (not present).
 dotnet build orleans\reminder
 dotnet build orleans\rss-reader
 dotnet build orleans\rss-reader-2
