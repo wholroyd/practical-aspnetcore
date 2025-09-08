@@ -80,8 +80,8 @@ dotnet build endpoint-routing\new-routing-29
 dotnet build endpoint-routing\new-routing-3
 dotnet build endpoint-routing\new-routing-30
 dotnet build endpoint-routing\new-routing-4
-# Removed due to API changes
-# dotnet build endpoint-routing\new-routing-5
+REM Removed due to API changes
+REM dotnet build endpoint-routing\new-routing-5
 dotnet build endpoint-routing\new-routing-6
 dotnet build endpoint-routing\new-routing-7
 dotnet build endpoint-routing\new-routing-8
