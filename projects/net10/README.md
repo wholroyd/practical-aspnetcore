@@ -1,6 +1,6 @@
 # ASP.NET Core 10 (12)
 
-These samples require SDK [10.0.100-rc.2.25502.107](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
+These samples require SDK [10.0.100](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
 - [dotnet run](dotnet-run)
 

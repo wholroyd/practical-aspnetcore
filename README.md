@@ -4,7 +4,7 @@ Greetings from Cairo, Egypt. You can [sponsor](https://github.com/sponsors/dodyg
 
 ## ASP.NET Core 10
 
-You can find samples on new features availabel in ASP.NET Core 10 RC2(12) [here](/projects/net10). Datastar examples (20) can be found [here](/projects/datastar).
+You can find samples on new features availabel in ASP.NET Core 10(12) [here](/projects/net10). Datastar examples (20) can be found [here](/projects/datastar).
 
 ## ASP.NET Core 9
 
