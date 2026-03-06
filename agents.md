@@ -178,16 +178,6 @@ There are **no GitHub Actions workflows** in this repository. The `.github/` dir
 
 ---
 
-## Upgrading Samples to a New .NET Version
-
-A PowerShell script is available at `scripts/upgrade-to-net10.ps1`. It replaces the `TargetFramework` value in all `.csproj` files under `projects/` with `net10.0` and sets `LangVersion` to `preview`. Run it from the repository root:
-
-```powershell
-./scripts/upgrade-to-net10.ps1
-```
-
----
-
 ## Useful Reference Samples
 
 | Goal | Sample location |

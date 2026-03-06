@@ -24,62 +24,62 @@ You can find samples on new features available in ASP.NET Core 9(3) [here](/proj
 
 ## Sections
 
-| Section                                                                 |     |                                                                              |
-| ----------------------------------------------------------------------- | --- | ---------------------------------------------------------------------------- |
-| [Authentication](/projects/authentication)                              | 5   |                                                                              |
-| [Blazor Client Side (Web Assembly)](/projects/blazor-wasm)              | 22  | .NET8 (WIP), Components, Data Binding                                        |
-| [Blazor Server](/projects/blazor-ss)                                    | 16  | Localization                                                                 |
-| [Blazor Server Side Render](/projects/blazor-ssr)                       | 22  |                                                                              |
-| [Caching](/projects/caching)                                            | 5   |                                                                              |
-| [Configurations](/projects/configurations)                              | 10  |                                                                              |
-| [CoreWCF](/projects/corewcf)                                            | 1   |                                                                              |
-| [Dependency Injection](/projects/dependency-injection/)                 | 4   |                                                                              |
-| [Diagnostics](/projects/diagnostics)                                    | 5   |                                                                              |
-| [Endpoint Routing](/projects/endpoint-routing)                          | 32  |                                                                              |
-| [Email](/projects/mailkit)                                              | 2   |                                                                              |
-| [Elsa Workflow](/projects/elsa)                                         | 14  | .NET8                                                                        |
-| [Exception Handler Middleware](/projects/exception-handler-middleware/) | 2   |                                                                              |
-| [Features](/projects/features)                                          | 11  |                                                                              |
-| [Generic Hosting](/projects/generic-host)                               | 9   |                                                                              |
-| [gRPC](/projects/grpc) (including grpc-Web)                             | 12  |                                                                              |
-| [Health Check](/projects/health-check)                                  | 6   |                                                                              |
-| [HTMX](/projects/htmx)                                                  | 40  |                                                                              |
-| [IHttpClientFactory](/projects/httpclientfactory)                       | 4   |                                                                              |
-| [IHostedService](/projects/ihosted-service)                             | 2   |                                                                              |
-| [Logging](/projects/logging)                                            | 6   |                                                                              |
-| [Localization and Globalization](/projects/localization)                | 6   |                                                                              |
-| [Middleware](/projects/middleware)                                      | 14  |                                                                              |
-| [Mini Apps](/projects/mini)                                             | 2   |                                                                              |
-| [Minimal API](/projects/minimal-api)                                    | 36  | Routing, Parameter Bindings, etc                                             |
-| [Minimal Hosting](/projects/minimal-hosting)                            | 23  |                                                                              |
-| [MVC](/projects/mvc)                                                    | 47  | Localization, Routing, Razor Class Library, Tag Helpers, View Component, etc |
-| [Output Cache Middleware](/projects/output-cache-middleware)            |     |                                                                              |
-| [Open Telemetry](/projects/open-telemetry/)                             | 3   |                                                                              |
-| [Orchard Core](/projects/orchard-core)                                  | 4   |                                                                              |
-| [Path String (HttpContext.Request.Path)](/projects/path-string)         | 1   |                                                                              |
-| [Polly](/projects/polly/)                                               | 1   |                                                                              |
-| [Problem Details Middleware](/projects/problem-details-middleware/)     | 3   |                                                                              |
-| [Razor Pages](/projects/razor-pages)                                    | 10  | TempData                                                                     |
-| [RazorSlices](/projects/razor-slices)                                   | 1   |                                                                              |
-| [Request](/projects/request)                                            | 15  | Form, Cookies, Query String, Headers                                         |
-| [Request Timeouts Middleware](/projets/request-timeouts-middleware)     | 6   |                                                                              |
-| [Response](/projects/response)                                          | 3   |                                                                              |
-| [SignalR](/projects/signalr)                                            | 1   |                                                                              |
-| [Security](/projects/security)                                          | 7   |                                                                              |
-| [Single File Application](/projects/sfa)                                | 2   |                                                                              |
-| [Static Files and File Provider](/projects/file-provider)               | 10  |                                                                              |
-| [System.Text.Json](/projects/json)                                      | 23  |                                                                              |
-| [Syndications](/projects/syndications)                                  | 3   |                                                                              |
-| [Testing](/projects/testing)                                            | 1   |                                                                              |
-| [Unpoly](/projects/unpoly)                                              | 5   |                                                                              |
-| [URL Redirect/Rewrite](/projects/rewrite)                               | 6   |                                                                              |
-| [Uri Helper](/projects/uri-helper)                                      | 5   |                                                                              |
-| [Windows Service](/projects/windows-service)                            | 1   |                                                                              |
-| [Web Sockets](/projects/web-sockets)                                    | 6   |                                                                              |
-| [Web Utilities](/projects/web-utilities)                                | 3   |                                                                              |
-| [Orleans](/projects/orleans)                                            | 5   | .NET.8                                                                       |
-| [Xml](/projects/xml)                                                    | 1   |                                                                              |
-| [YARP](/projects/yarp)                                                  | 1   |                                                                              |
+| Section                                                                 |    |                                                                              |
+|-------------------------------------------------------------------------|----|------------------------------------------------------------------------------|
+| [Authentication](/projects/authentication)                              | 5  |                                                                              |
+| [Blazor Client Side (Web Assembly)](/projects/blazor-wasm)              | 22 | .NET8 (WIP), Components, Data Binding                                        |
+| [Blazor Server](/projects/blazor-ss)                                    | 16 | Localization                                                                 |
+| [Blazor Server Side Render](/projects/blazor-ssr)                       | 22 |                                                                              |
+| [Caching](/projects/caching)                                            | 5  |                                                                              |
+| [Configurations](/projects/configurations)                              | 10 |                                                                              |
+| [CoreWCF](/projects/corewcf)                                            | 1  |                                                                              |
+| [Dependency Injection](/projects/dependency-injection/)                 | 4  |                                                                              |
+| [Diagnostics](/projects/diagnostics)                                    | 5  |                                                                              |
+| [Endpoint Routing](/projects/endpoint-routing)                          | 32 |                                                                              |
+| [Email](/projects/mailkit)                                              | 2  |                                                                              |
+| [Elsa Workflow](/projects/elsa)                                         | 14 | .NET8                                                                        |
+| [Exception Handler Middleware](/projects/exception-handler-middleware/) | 2  |                                                                              |
+| [Features](/projects/features)                                          | 11 |                                                                              |
+| [Generic Hosting](/projects/generic-host)                               | 9  |                                                                              |
+| [gRPC](/projects/grpc) (including grpc-Web)                             | 12 |                                                                              |
+| [Health Check](/projects/health-check)                                  | 6  |                                                                              |
+| [HTMX](/projects/htmx)                                                  | 40 |                                                                              |
+| [IHttpClientFactory](/projects/httpclientfactory)                       | 4  |                                                                              |
+| [IHostedService](/projects/ihosted-service)                             | 2  |                                                                              |
+| [Logging](/projects/logging)                                            | 6  |                                                                              |
+| [Localization and Globalization](/projects/localization)                | 6  |                                                                              |
+| [Middleware](/projects/middleware)                                      | 14 |                                                                              |
+| [Mini Apps](/projects/mini)                                             | 2  |                                                                              |
+| [Minimal API](/projects/minimal-api)                                    | 36 | Routing, Parameter Bindings, etc                                             |
+| [Minimal Hosting](/projects/minimal-hosting)                            | 23 |                                                                              |
+| [MVC](/projects/mvc)                                                    | 47 | Localization, Routing, Razor Class Library, Tag Helpers, View Component, etc |
+| [Output Cache Middleware](/projects/output-cache-middleware)            |    |                                                                              |
+| [Open Telemetry](/projects/open-telemetry/)                             | 3  |                                                                              |
+| [Orchard Core](/projects/orchard-core)                                  | 4  |                                                                              |
+| [Path String (HttpContext.Request.Path)](/projects/path-string)         | 1  |                                                                              |
+| [Polly](/projects/polly/)                                               | 1  |                                                                              |
+| [Problem Details Middleware](/projects/problem-details-middleware/)     | 3  |                                                                              |
+| [Razor Pages](/projects/razor-pages)                                    | 10 | TempData                                                                     |
+| [RazorSlices](/projects/razor-slices)                                   | 1  |                                                                              |
+| [Request](/projects/request)                                            | 15 | Form, Cookies, Query String, Headers                                         |
+| [Request Timeouts Middleware](/projets/request-timeouts-middleware)     | 6  |                                                                              |
+| [Response](/projects/response)                                          | 3  |                                                                              |
+| [SignalR](/projects/signalr)                                            | 1  |                                                                              |
+| [Security](/projects/security)                                          | 7  |                                                                              |
+| [Single File Application](/projects/sfa)                                | 2  |                                                                              |
+| [Static Files and File Provider](/projects/file-provider)               | 10 |                                                                              |
+| [System.Text.Json](/projects/json)                                      | 23 |                                                                              |
+| [Syndications](/projects/syndications)                                  | 3  |                                                                              |
+| [Testing](/projects/testing)                                            | 1  |                                                                              |
+| [Unpoly](/projects/unpoly)                                              | 5  |                                                                              |
+| [URL Redirect/Rewrite](/projects/rewrite)                               | 6  |                                                                              |
+| [Uri Helper](/projects/uri-helper)                                      | 5  |                                                                              |
+| [Windows Service](/projects/windows-service)                            | 1  |                                                                              |
+| [Web Sockets](/projects/web-sockets)                                    | 6  |                                                                              |
+| [Web Utilities](/projects/web-utilities)                                | 3  |                                                                              |
+| [Orleans](/projects/orleans)                                            | 5  | .NET.8                                                                       |
+| [Xml](/projects/xml)                                                    | 1  |                                                                              |
+| [YARP](/projects/yarp)                                                  | 1  |                                                                              |
 
 ## How to run these samples
 
