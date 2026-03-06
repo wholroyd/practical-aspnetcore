@@ -1,24 +1,25 @@
+using Scalar.AspNetCore;
+
 using Microsoft.AspNetCore.Mvc;
 
-var builder = WebApplication.CreateBuilder();
-builder.Services.AddControllersWithViews();
-builder.Services.AddSwaggerDocument(settings =>
-{
-    settings.Title = "Sample API";
-});
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
+app.MapOpenApi();
+app.MapScalarApiReference();
+
 app.UseStaticFiles();
 
-app.UseOpenApi();
-app.UseSwaggerUi(settings =>
-{
-    settings.TagsSorter = "alpha";
-    settings.OperationsSorter = "alpha";
-});
+app.UseRouting();
 
-app.MapDefaultControllerRoute();
+app.UseAuthorization();
+
+app.MapControllers();
+
 app.Run();
 
 

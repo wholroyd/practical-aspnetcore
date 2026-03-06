@@ -1,21 +1,14 @@
+using Scalar.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
-using NSwag.Annotations;
 
 var builder = WebApplication.CreateBuilder();
+builder.Services.AddOpenApi();
 builder.Services.AddControllersWithViews();
-builder.Services.AddSwaggerDocument(settings =>
-{
-    settings.Title = "Sample API";
-});
 
 var app = builder.Build();
+app.MapOpenApi();
+app.MapScalarApiReference();
 app.UseStaticFiles();
-app.UseOpenApi();
-app.UseSwaggerUi(settings =>
-{
-    settings.TagsSorter = "alpha";
-    settings.OperationsSorter = "alpha";
-});
 app.MapDefaultControllerRoute();
 app.Run();
 
@@ -29,7 +22,7 @@ public class HomeController : ControllerBase
     {
         return new ContentResult
         {
-            Content = "<html><body><b><a href=\"/swagger\">View API Documentation</a></b></body></html>",
+            Content = "<html><body><b><a href=\"/scalar\">View API Documentation</a></b></body></html>",
             ContentType = "text/html"
         };
     }
@@ -55,7 +48,7 @@ public class GreetingController : ControllerBase
     /// </summary>
     /// <response code="200">The "Hello World" text</response>
     [HttpGet("")]
-    [OpenApiTag("Basic")]
+    [Tags("Basic")]
     public ActionResult<Greeting> Index()
     {
         return new Greeting
@@ -65,7 +58,7 @@ public class GreetingController : ControllerBase
     }
 
     [HttpPost("goodbye")]
-    [OpenApiTag("Basic")]
+    [Tags("Basic")]
     public ActionResult<Greeting> Goodbye(string name)
     {
         return new Greeting
@@ -76,21 +69,21 @@ public class GreetingController : ControllerBase
     }
 
     [HttpPut("")]
-    [OpenApiTag("Intermediate")]
+    [Tags("Intermediate")]
     public ActionResult<Greeting> Relay(Greeting greet)
     {
         return greet;
     }
 
     [HttpDelete("greetings/{name}")]
-    [OpenApiTag("Intermediate")]
+    [Tags("Intermediate")]
     public ActionResult Remove(string name)
     {
         return Ok($"{name} removed");
     }
 
     [HttpPatch("")]
-    [OpenApiTag("Advanced")]
+    [Tags("Advanced")]
     public ActionResult<Greeting> Update(string city)
     {
         return new Greeting
@@ -101,7 +94,7 @@ public class GreetingController : ControllerBase
     }
 
     [HttpGet("hide/this")]
-    [OpenApiIgnore]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public ActionResult HideThis()
     {
         return Ok(new { gretting = "hello" });

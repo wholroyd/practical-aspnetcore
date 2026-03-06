@@ -1,69 +1,59 @@
+using System.Runtime.CompilerServices;
+
+using System.Runtime.CompilerServices;
+
 var builder = WebApplication.CreateBuilder();
 var app = builder.Build();
 
-int requestCount = 0;
-
-app.MapGet("/sse", async context =>
+async IAsyncEnumerable<string> CounterAsync([EnumeratorCancellation] CancellationToken cancellationToken)
 {
-    if (context.Request.Headers["Accept"] == "text/event-stream")
+    int count = 0;
+    while (true && !cancellationToken.IsCancellationRequested)
     {
-        requestCount++;
-        app.Logger.LogDebug($"Start SSE request {requestCount}");
+        yield return $"hello world {++count}";
+        await Task.Delay(3000, cancellationToken);
+    }
+}
 
-        try
-        {
-            context.Response.ContentType = "text/event-stream";
-            await context.Response.Body.FlushAsync();
-            foreach (var round in Counter())
-            {
-                string data = $"hello world {round}";
-                await context.Response.WriteAsync($"data: {data}\n");
-
-                string id = round.ToString();
-                await context.Response.WriteAsync($"id: {id}\n");
-
-                string eventType = "message"; //the other type if 'ping'
-                await context.Response.WriteAsync($"event: {eventType}\n");
-
-                await context.Response.WriteAsync("\n");//end of message
-                await context.Response.Body.FlushAsync();
-                await Task.Delay(3000);
-            }
-        }
-        catch (Exception ex)
-        {
-            app.Logger.LogDebug(ex.Message);
-        }
+    if (context.Request.Headers.Accept == "text/event-stream")
+    {
+        return Results.ServerSentEvents(CounterAsync(cancellationToken), eventType: "greeting");
+    }
+    else
+    {
+        return Results.BadRequest("Unsupported Accept header. Use 'text/event-stream'.");
     }
 });
 
-app.MapGet("/", async context =>
+    app.MapGet("/", async context =>
 {
     await context.Response.WriteAsync(@"
-    <html>
-        <head>
-        </head>
-        <body>
-            <h1>SSE</h1>
-            <ul id=""list""></ul>
-            <script>
-                var source = new EventSource('/sse');
-                var list = document.getElementById('list');
-                source.onmessage = function(e) {
-                    var item = document.createElement('li');
-                    item.textContent = e.data;
-                    list.appendChild(item);
-                };
-
-                source.onerror = function(event){
-                    console.log(event);
-                };
-            </script>
-        </body>
-    </html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>SSE with Built-in Support</h1>
+        <ul id=""list""></ul>
+        <script>
+            console.log('Connecting to SSE...');
+            var source = new EventSource('/sse');
+            source.onopen = function(event) {
+                console.log('Connection opened:', event);
+            };
+            source.onmessage = function(e) {
+                var item = document.createElement('li');
+                item.textContent = e.data;
+                list.appendChild(item);
+            };
+            source.onerror = function(event) {
+                console.log(event);
+            }
+        </script>
+    </body>
+</html>
     ");
 });
- 
+
 app.Run();
 
 IEnumerable<int> Counter()

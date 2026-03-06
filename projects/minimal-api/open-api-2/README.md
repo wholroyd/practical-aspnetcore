@@ -1,3 +1,37 @@
-# Results<TResult1, TResult2, TResultN>
+# Built-in OpenAPI with Scalar UI
 
-`Results<TResult1, TResult2, TResultN>` provides better description of the result of the operation that OpenAPI/Swagger can use in describing the API.
+This sample demonstrates ASP.NET Core 10's built-in OpenAPI 3.1 support with multiple response types.
+
+## Key Features
+
+- No external packages required (Swashbuckle/NSwag removed)
+- OpenAPI 3.1 document generated automatically
+- XML doc comments populate API descriptions and response codes
+- Modern Scalar UI for interactive documentation
+- AOT-compatible
+- Demonstrates `Results<T1, T2>` pattern with proper response documentation
+
+## Running the Sample
+
+```bash
+dotnet watch run
+```
+
+## Viewing the Documentation
+
+- **Scalar UI:** Navigate to `/scalar`
+- **OpenAPI JSON:** Navigate to `/openapi/v1.json`
+
+## Migration Notes
+
+This sample was migrated from Swashbuckle to .NET 10's built-in OpenAPI support.
+
+**Changes:**
+- Removed `Swashbuckle.AspNetCore` package dependency
+- Added `Microsoft.AspNetCore.OpenApi` (built-in)
+- Added `Scalar.AspNetCore` for modern UI
+- Replaced `WithOpenApi()` with XML documentation comments
+- Enabled `GenerateDocumentationFile` in .csproj
+- Added response code documentation (200, 404)
+
+See `OUT-OF-DATE.md` for migration details.

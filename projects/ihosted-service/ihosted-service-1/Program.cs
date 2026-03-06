@@ -1,6 +1,12 @@
+using Microsoft.Extensions.Hosting;
+
+using Microsoft.Extensions.Hosting;
+
+using Microsoft.Extensions.Hosting;
+
 var builder = WebApplication.CreateBuilder();
 builder.Services.AddSingleton<Greeter>();
-builder.Services.AddSingleton<Microsoft.Extensions.Hosting.IHostedService, GreeterUpdaterService>();
+builder.Services.AddHostedService<GreeterUpdaterService>();
 
 var app = builder.Build();
 app.Run(context =>
@@ -12,19 +18,34 @@ app.Run(context =>
 
 app.Run();
 
-public abstract class HostedService : Microsoft.Extensions.Hosting.IHostedService, IDisposable
+public class Greeter
 {
-    //from https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/
-
-    private Task _executingTask;
-    private readonly CancellationTokenSource _stoppingCts = new CancellationTokenSource();
-
-    public Task StartAsync(CancellationToken cancellationToken)
-    {
-        _executingTask = ExecuteAsync(_stoppingCts.Token);
-
-        return _executingTask.IsCompleted ? _executingTask : Task.CompletedTask;
+    public int Counter { get; set; }
+    public override string ToString() => $"Hello world {Counter}";
     }
+}
+
+/// <summary>
+/// Background service that updates a Greeter counter
+/// </summary>
+public class GreeterUpdaterService : BackgroundService
+{
+    private readonly Greeter _greeter;
+
+    public GreeterUpdaterService(Greeter greeter)
+    {
+        _greeter = greeter;
+    }
+
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            _greeter.Counter++;
+            await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
+        }
+    }
+}
 
     public async Task StopAsync(CancellationToken cancellationToken)
     {

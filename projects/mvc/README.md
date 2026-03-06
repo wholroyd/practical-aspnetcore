@@ -73,11 +73,11 @@
 
 * [Using NSwag](/projects/mvc/nswag)
   
-  Generate automatic documentation for your Web API using [Swagger](https://swagger.io/) specification and [NSwag](https://github.com/RSuter/NSwag)
+  Generate automatic documentation for your Web API using .NET 10 built-in OpenAPI (previously used NSwag).
 
 * [Customizing NSwag](/projects/mvc/nswag-2)
 
-  Use attribute such as `OpenApiTag` to organize your API or `OpenApiIgnore` to hide an API from the definition (using `[ApiExplorerSettings(IgnoreApi = true)]` also works).
+  Use attribute such as `OpenApiTag` to organize your API or `OpenApiIgnore` to hide an API from the definition (using `[ApiExplorerSettings(IgnoreApi = true)]` also works). Uses NSwag as alternative to built-in OpenAPI.
 
 ## Syndication Output Formatter (1)
 

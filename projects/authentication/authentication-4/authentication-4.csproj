@@ -6,10 +6,12 @@
     <RootNamespace>authentication_4</RootNamespace>
     <UserSecretsId>63c41692-91b0-46cc-9f2d-a92f9ee59392</UserSecretsId>
     <LangVersion>preview</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0-preview.5.*" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0-preview.5.*" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.1.13" />
   </ItemGroup>
 </Project>
