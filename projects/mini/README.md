@@ -10,6 +10,6 @@ This is a collection of useful mini applications written in ASP.NET Core 5 desig
 
 * [Pokedex API](minimal-api-pokedex)
 
-  This example shows how to build Web API using .NET 6 Minimal API pattern using Pokedex as a data source.
+  This example shows how to build Web API using Minimal API pattern using Pokedex as a data source. Uses .NET 10 built-in OpenAPI.
 
-dotnet6
+dotnet10

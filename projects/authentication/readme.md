@@ -1,4 +1,4 @@
-# Authentication (4)
+# Authentication (5)
 
 - [Authentication - JWT](authentication-1)
 
@@ -14,11 +14,10 @@
 
 - [Authentication - simplified JWT bearer token authentication](authentication-4)
 
-  This sample shows the usage of the simplified authentication and authorization using webapi template via `builder.AddAuthentication().AddJwtBearer();`.
+  This sample shows the usage of the simplified authentication and authorization using webapi template via `builder.AddAuthentication().AddJwtBearer();`. Uses .NET 10 built-in OpenAPI.
 
 - [Authentication - Identity](authentication-5)
 
-  This sample shows the usage of authentication using Identity API using webapi template via `builder.ServicesAddIdentityApiEndpoints<>().AddEntityFrameworkStores<>();
-`.
+  This sample shows the usage of authentication using Identity API using webapi template via `builder.ServicesAddIdentityApiEndpoints<>().AddEntityFrameworkStores<>();`. Uses .NET 10 built-in OpenAPI.
 
 dotnet8

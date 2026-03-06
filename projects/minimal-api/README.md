@@ -22,7 +22,7 @@ In these examples we are using the familiar `Host.CreateDefaultBuilder(args)` ho
 
 * [Setup Open API support](map-4)
 
-  This sample shows how to setup Open API support with Swashbuckle.
+  This sample shows how to setup Open API support using .NET 10 built-in OpenAPI.
 
 * [HttpRequest injection](map-5)
 
@@ -143,11 +143,11 @@ In these examples we are using the familiar `Host.CreateDefaultBuilder(args)` ho
 
 * [Route Group - 2](map-group-2)
 
-  Use `.WithTags()`, `.WithDescription()`, `.WithSummary()` to enrich OpenAPI information for all the endpoints in the group.
+  Use `.WithTags()`, `.WithDescription()`, `.WithSummary()` to enrich OpenAPI information for all the endpoints in the group. Uses .NET 10 built-in OpenAPI.
 
 * [Route Group - 3](map-group-3)
 
-  Use `.ExcludeFromDescription` to exclude endpoints from OpenAPI description.
+  Use `.ExcludeFromDescription` to exclude endpoints from OpenAPI description. Uses .NET 10 built-in OpenAPI.
 
 
 ## Minimal API Improvements
@@ -162,11 +162,11 @@ In these examples we are using the familiar `Host.CreateDefaultBuilder(args)` ho
 
 * [WithOpenApi - 1](open-api-1)
 
-  This sample demonstrate the usage of `WithOpenApi` extension method available in  `Microsoft.AspNetCore.OpenApi` to customize OpenAPI operation information.
+  This sample demonstrates .NET 10 built-in OpenAPI support using XML comments and `AddOpenApi()`.
 
 * [Results<> Union Type](open-api-2)
 
-  `Results<TResult1, TResult2, TResultN>` provides better description of the result of the operation that OpenAPI/Swagger can use in describing the API.
+  `Results<TResult1, TResult2, TResultN>` provides better description of the result of the operation. Uses .NET 10 built-in OpenAPI.
 
 * [IFormFile](iform-file)
   

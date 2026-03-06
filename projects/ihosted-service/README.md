@@ -2,7 +2,7 @@
 
 * [Background Task](/projects/ihosted-service/ihosted-service-1)
 
-  Implement background tasks using the new `IHostedService` interface.
+  Implement background tasks using `BackgroundService` base class (simplified pattern in .NET 10).
 
 * [Background Task - 2](/projects/ihosted-service/ihosted-service-2)
 

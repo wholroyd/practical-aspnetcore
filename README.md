@@ -4,7 +4,20 @@ Greetings from Cairo, Egypt. You can [sponsor](https://github.com/sponsors/dodyg
 
 ## ASP.NET Core 10
 
-You can find samples on new features availabel in ASP.NET Core 10(12) [here](/projects/net10). Datastar examples (20) can be found [here](/projects/datastar).
+You can find samples on new features available in ASP.NET Core 10(12) [here](/projects/net10). Datastar examples (20) can be found [here](/projects/datastar).
+
+### .NET 10 Migration (March 2026)
+
+12 samples have been migrated to use modern .NET 10 patterns:
+
+| Migration | Samples |
+|-----------|---------|
+| Swashbuckle → Built-in OpenAPI | 9 samples |
+| Manual SSE → Built-in SSE | 1 sample |
+| Custom IHostedService → BackgroundService | 1 sample |
+| NSwag → Built-in OpenAPI (MVC) | 1 sample |
+
+See [OUT-OF-DATE.md](OUT-OF-DATE.md) for migration details.
 
 ## ASP.NET Core 9
 
@@ -117,7 +130,7 @@ To run these samples, simply open your command line console, go to each folder a
 
 -   [Forever Server](/projects/sse)
 
-    This server will send a 'hello world' greeting forever.
+    This server will send a 'hello world' greeting forever using .NET 10 built-in SSE support.
 
 ### Markdown (2)
 
