@@ -1,4 +1,4 @@
-# Samples for ASP.NET Core 8.0 
+# Samples for ASP.NET Core 10.0 
 
 Greetings from Cairo, Egypt. You can [sponsor](https://github.com/sponsors/dodyg) this project [here](https://github.com/sponsors/dodyg). 
 
@@ -167,4 +167,5 @@ All these samples require `SixLabors.ImageSharp.Web` middleware package. This mi
 
 -   [Contributor Guidelines](https://github.com/dodyg/practical-aspnetcore/blob/master/CONTRIBUTING.md)
 -   [Code of Conduct](https://github.com/dodyg/practical-aspnetcore/blob/master/CODE_OF_CONDUCT.md)
+
 
