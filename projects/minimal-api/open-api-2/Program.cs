@@ -1,23 +1,12 @@
-using Microsoft.AspNetCore.OpenApi;
-using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(setup => setup.SwaggerDoc("v1", new OpenApiInfo()
-{
-    Description = "A sample for demonstrating using .WithOpenApi() with Minimal API",
-    Title = "WithOpenApi()",
-    Version = "v1",
-    Contact = new OpenApiContact()
-    {
-        Name = "Practical ASP.NET Core",
-        Url = new Uri("https://github.com/dodyg/practical-aspnetcore")
-    }
-}));
+builder.Services.AddOpenApi();
 
 var app = builder.Build();
-app.UseSwagger();
+app.MapOpenApi();
+app.MapScalarApiReference();
 
 app.MapGet("/", () => Results.Content("""
 <html>
@@ -27,27 +16,28 @@ app.MapGet("/", () => Results.Content("""
 <body>
     <div class="container">
         <ul>
-            <li><a href="/swagger/index.html">Swagger Doc</a></li>
+            <li><a href="/scalar">Scalar API Documentation</a></li>
+            <li><a href="/openapi/v1.json">OpenAPI JSON</a></li>
         </ul>
     </div>
 </body>
 </html>
 """, "text/html"));
 
-app.MapGet("/greeting", Hello.GetGreeting).WithOpenApi(op =>
-{
-    op.OperationId = "GetGreetings";
-    op.Summary = "Return greeting given name";
-    return op;
-});
+app.MapGet("/greeting", Hello.GetGreeting);
 
-app.UseSwaggerUI();
 app.Run();
 
 public record Person(string Name);
 
+/// <summary>
+/// Return greeting given name
+/// </summary>
 public static class Hello
 {
+    /// <param name="name">The name of the person to greet</param>
+    /// <response code="200">Returns the person with the greeting</response>
+    /// <response code="404">If name is null or whitespace</response>
     public static Results<Ok<Person>, NotFound> GetGreeting(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
