@@ -1,5 +1,34 @@
-# Using .WithTags(), .WithDescription(), .WithSummary()
+# Built-in OpenAPI with Scalar UI
 
-This example shows how to use the `WithTags()`, `WithDescription()`, and `WithSummary()` with minimal API `MapGroup()`.
+This sample demonstrates ASP.NET Core 10's built-in OpenAPI 3.1 support with route groups.
 
-These extension methods are related to OpenAPI information and are used to generate the OpenAPI documentation. All methods inside the group will inherit the information setup on the group level. 
+## Key Features
+
+- No external packages required (Swashbuckle/NSwag removed)
+- OpenAPI 3.1 document generated automatically
+- Modern Scalar UI for interactive documentation
+- Demonstrates route grouping with `WithTags()` and `WithDescription()`
+- AOT-compatible
+
+## Running the Sample
+
+```bash
+dotnet watch run
+```
+
+## Viewing the Documentation
+
+- **Scalar UI:** Navigate to `/scalar`
+- **OpenAPI JSON:** Navigate to `/openapi/v1.json`
+
+## Migration Notes
+
+This sample was migrated from Swashbuckle to .NET 10's built-in OpenAPI support.
+
+**Changes:**
+- Removed `Swashbuckle.AspNetCore` package dependency
+- Added `Microsoft.AspNetCore.OpenApi` (built-in)
+- Added `Scalar.AspNetCore` for modern UI
+- Enabled `GenerateDocumentationFile` in .csproj
+
+See `OUT-OF-DATE.md` for migration details.

@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.OpenApi;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi();
 var app = builder.Build();
-app.UseSwagger();
-app.UseSwaggerUI();
+app.MapOpenApi();
+app.MapScalarApiReference();
 
 app.MapGet("/", () => Results.Content("""
 <html>
@@ -18,7 +17,8 @@ app.MapGet("/", () => Results.Content("""
             <li><a href="/about">/about</a></li>
             <li><a href="/about/us">/about/us</a></li>
             <li><a href="/about/all">/about/all</a></li>
-            <li><a href="/swagger">Swagger definition</a>
+            <li><a href="/scalar">Scalar API Documentation</a></li>
+            <li><a href="/openapi/v1.json">OpenAPI JSON</a></li>
         </ul>
     </div>
 </body>
@@ -29,8 +29,7 @@ app.MapGet("/", () => Results.Content("""
 app.MapGroup("/about")
     .MapAboutApi()
     .WithTags("about_apis")
-    .WithDescription("This is a group of API related to About")
-    .WithSummary("This is a summary of the API groups");
+    .WithDescription("This is a group of API related to About");
 
 app.Run();
 
