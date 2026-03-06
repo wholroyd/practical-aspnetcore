@@ -10,6 +10,60 @@ This repository contains practical ASP.NET Core code samples organized by topic.
 - **Total Categories**: 72
 - **Primary .NET Version**: .NET 10.0 (net10.0)
 
+## Build Status
+
+| Category | Status |
+|----------|--------|
+| authentication | SUCCESS |
+| blazor-ss | SUCCESS |
+| blazor-ssr | SUCCESS |
+| blazor-wasm | SUCCESS |
+| caching | SUCCESS |
+| configurations | SUCCESS |
+| datastar | SUCCESS |
+| dependency-injection | SUCCESS |
+| diagnostics | SUCCESS |
+| elsa | SUCCESS |
+| endpoint-routing | SUCCESS |
+| exception-handler-middleware | SUCCESS |
+| features | SUCCESS |
+| file-provider | SUCCESS |
+| generic-host | SUCCESS |
+| grpc | SUCCESS |
+| health-check | SUCCESS |
+| httpclientfactory | SUCCESS |
+| hydro | SUCCESS |
+| ihosted-service | SUCCESS |
+| json | SUCCESS |
+| localization | SUCCESS |
+| logging | SUCCESS |
+| mailkit | SUCCESS |
+| middleware | SUCCESS |
+| mini | SUCCESS |
+| minimal-api | SUCCESS |
+| minimal-hosting | SUCCESS |
+| mvc | SUCCESS |
+| net10 | SUCCESS |
+| net9 | SUCCESS |
+| open-telemetry | SUCCESS |
+| orchard-core | SUCCESS |
+| orleans | SUCCESS |
+| output-cache-middleware | SUCCESS |
+| path-string | SUCCESS |
+| polly | SUCCESS |
+| problem-details-middleware | SUCCESS |
+| razor-pages | SUCCESS |
+| request-timeouts-middleware | SUCCESS |
+| request | SUCCESS |
+| response | SUCCESS |
+| rewrite | SUCCESS |
+| security | SUCCESS |
+| syndications | SUCCESS |
+| uri-helper | SUCCESS |
+| utils | SUCCESS |
+| web-sockets | SUCCESS |
+| web-utilities | SUCCESS |
+
 ## .NET Version Distribution
 
 All samples target **.NET 10.0 (net10.0)** as specified in the root `global.json`:
