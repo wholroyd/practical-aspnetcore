@@ -1,0 +1,1 @@
+dotnet build open-api-12
